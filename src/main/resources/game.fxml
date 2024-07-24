@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="questionPane" alignment="CENTER_LEFT" prefHeight="484.0" prefWidth="704.0" spacing="20" style="-fx-background-color: lightcyan;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.quiz.GameController">
+
+   <!-- Feedback label -->
+   <Label fx:id="feedbackLabel" text="" visible="false" />
+
+   <!-- Placeholder for question -->
+   <Label fx:id="questionLabel" text="Question">
+      <VBox.margin>
+         <Insets left="15.0" />
+      </VBox.margin>
+   </Label>
+
+   <!-- Placeholder for question and options -->
+   <VBox alignment="CENTER_LEFT" prefHeight="225.0" prefWidth="664.0" spacing="20">
+      <!-- Placeholder for answer options -->
+      <GridPane alignment="CENTER_LEFT">
+         <Button fx:id="option1" onAction="#handleOption1" prefHeight="36.0" prefWidth="164.0" style="-fx-background-color: cadetblue; -fx-background-radius: 32px; -fx-border-radius: 32px;" text="Option 1" GridPane.columnIndex="1">
+            <GridPane.margin>
+               <Insets left="15.0" />
+            </GridPane.margin>
+         </Button>
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+         </rowConstraints>
+      </GridPane>
+      <GridPane alignment="CENTER_LEFT">
+         <Button fx:id="option2" onAction="#handleOption2" prefHeight="32.0" prefWidth="164.0" style="-fx-background-color: cadetblue; -fx-background-radius: 32px; -fx-border-radius: 32px;" text="Option 2">
+            <GridPane.margin>
+               <Insets left="15.0" />
+            </GridPane.margin>
+         </Button>
+         <columnConstraints>
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+         </rowConstraints>
+      </GridPane>
+      <GridPane alignment="CENTER_LEFT">
+         <Button fx:id="option3" onAction="#handleOption3" prefHeight="33.0" prefWidth="163.0" style="-fx-background-color: cadetblue; -fx-background-radius: 32px; -fx-border-radius: 32px;" text="Option 3">
+            <GridPane.margin>
+               <Insets left="15.0" />
+            </GridPane.margin>
+         </Button>
+         <columnConstraints>
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+         </rowConstraints>
+      </GridPane>
+   </VBox>
+
+   <!-- Container for timer and next button -->
+   <HBox alignment="BOTTOM_RIGHT" spacing="10">
+      <!-- Timer label positioned to the left -->
+      <Label fx:id="timerLabel" text="Time left: 60s" />
+
+      <!-- Finish button positioned to the right, initially hidden -->
+      <Button fx:id="finishButton" onAction="#handleFinish" text="Finish" visible="false" />
+
+      <!-- Next button positioned to the right -->
+      <Button fx:id="nextButton" contentDisplay="TEXT_ONLY" onAction="#handleNext" prefWidth="184.0" style="-fx-background-color: springgreen;" text="Next">
+         <HBox.margin>
+            <Insets right="15.0" />
+         </HBox.margin>
+      </Button>
+   </HBox>
+</VBox>
